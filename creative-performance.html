@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creative Power - Remaps e Performance</title>
+  <meta name="description" content="Calculadora de ganhos de performance para remaps Creative Power." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar performance-topbar">
+    <a class="brand performance-brand" href="index.html" aria-label="Creative Garage">
+      <img src="assets/uploads/creativepower-round-640w-copiar-1920w-20260427170009-7e0f06.webp" alt="Creative Power">
+    </a>
+    <nav class="nav performance-nav">
+      <a href="index.html">Creative Garage</a>
+      <a href="#calculator">Calculadora</a>
+      <a href="#services">Serviços</a>
+      <a href="index.html#contact">Contacto</a>
+    </nav>
+    <a class="btn btn-outline btn-visit" href="index.html#contact">Marcar avaliação</a>
+  </header>
+
+  <main class="performance-page">
+    <section class="performance-hero">
+      <div class="performance-hero-bg"></div>
+      <div class="container performance-hero-grid">
+        <div>
+          <p class="eyebrow">Creative Power</p>
+          <h1>Remaps para<br>máximo rendimento.</h1>
+          <p>Calcula uma estimativa de potência e binário após reprogramação Stage 1. Os valores são indicativos e dependem do estado da viatura, combustível, altitude, temperatura e calibração final.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="#calculator">Calcular ganho</a>
+            <a class="btn btn-dark" href="index.html#contact">Falar connosco</a>
+          </div>
+        </div>
+        <div class="performance-hero-card">
+          <img src="assets/uploads/creativepower-round-640w-copiar-1920w-20260427170009-7e0f06.webp" alt="Creative Power">
+          <strong>Stage 1<br>ECU Remap</strong>
+          <span>Potência • Binário • Resposta</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="section remap-calculator-section">
+      <div class="container remap-calculator">
+        <div class="remap-intro">
+          <p class="eyebrow">Calculadora de performance</p>
+          <h2>Descobre quanto<br>podes ganhar.</h2>
+          <p>Escolhe uma viatura da lista ou introduz os valores atuais manualmente.</p>
+        </div>
+
+        <form class="remap-form" id="remapForm">
+          <div class="grid-2">
+            <label>Marca
+              <select id="makeSelect"></select>
+            </label>
+            <label>Modelo
+              <select id="modelSelect"></select>
+            </label>
+          </div>
+          <label>Motor / versão
+            <select id="engineSelect"></select>
+          </label>
+
+          <div class="manual-fields hidden" id="manualFields">
+            <div class="grid-2">
+              <label>Potência atual (cv)
+                <input id="manualHp" type="number" min="50" max="1500" value="150">
+              </label>
+              <label>Binário atual (Nm)
+                <input id="manualTorque" type="number" min="80" max="2000" value="320">
+              </label>
+            </div>
+            <div class="grid-2">
+              <label>Tipo de motor
+                <select id="fuelSelect">
+                  <option value="diesel">Diesel turbo</option>
+                  <option value="petrolTurbo">Gasolina turbo</option>
+                  <option value="petrolNa">Gasolina atmosférico</option>
+                </select>
+              </label>
+              <label>Stage
+                <select id="stageSelect">
+                  <option value="stage1">Stage 1</option>
+                  <option value="eco">Eco / eficiência</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </form>
+
+        <div class="remap-result" id="remapResult">
+          <div class="result-card">
+            <span>Original</span>
+            <strong id="stockHp">0 cv</strong>
+            <small id="stockTorque">0 Nm</small>
+          </div>
+          <div class="result-card result-card-hot">
+            <span>Após remap</span>
+            <strong id="tunedHp">0 cv</strong>
+            <small id="tunedTorque">0 Nm</small>
+          </div>
+          <div class="result-card">
+            <span>Ganho estimado</span>
+            <strong id="gainHp">+0 cv</strong>
+            <small id="gainTorque">+0 Nm</small>
+          </div>
+        </div>
+
+        <p class="remap-disclaimer">Valores meramente indicativos. A potência real pode variar conforme estado mecânico, combustível, temperatura, altitude, limites de segurança, caixa, embraiagem, turbo e leitura em banco de potência.</p>
+      </div>
+    </section>
+
+    <section id="services" class="section performance-services">
+      <div class="container">
+        <p class="eyebrow">Serviços Creative Power</p>
+        <div class="performance-service-grid">
+          <article><h3>Stage 1</h3><p>Reprogramação segura para viaturas sem alterações mecânicas profundas.</p></article>
+          <article><h3>Eco map</h3><p>Afinação orientada para resposta mais eficiente e condução mais económica.</p></article>
+          <article><h3>Diagnóstico</h3><p>Leitura de parâmetros e validação do estado da viatura antes da intervenção.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/performance.js"></script>
+</body>
+</html>
