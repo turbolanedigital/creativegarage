@@ -6,7 +6,7 @@ function byPath(obj,path){return path.split('.').reduce((a,k)=>a?.[k],obj)}
 function nl(text){return String(text||'').replace(/\n/g,'<br>')}
 function image(path){return path || 'assets/logo/creative-logo.webp'}
 function imageUrl(path){return new URL(image(path), document.baseURI).href}
-function cssUrl(path){return `url("${imageUrl(path).replace(/["\\]/g,'\\$&')}")`}
+function cssUrl(path){return `url('${imageUrl(path).replace(/['\\]/g,'\\$&')}')`}
 async function init(){
   const [content,services,gallery,partners] = await Promise.all([getJSON('data/content.json'),getJSON('data/services.json'),getJSON('data/gallery.json'),getJSON('data/partners.json')]);
   $$('[data-image-content]').forEach(el=>{ el.src = imageUrl(byPath(content,el.dataset.imageContent)); });

@@ -1,22 +1,22 @@
 {
-  "logo": "assets/logo/creative-logo.webp",
-  "hero": {
-    "title": "Elevamos\no teu estilo.",
-    "tags": "Car Wrap • Performance • Detailing",
-    "note": "A Creative não é uma Oficina Walk In. É obrigatória a marcação atempada de visitas.",
-    "financeSmall": "Possibilidade de parcelar\naté 12x sem juros.",
-    "image": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=2200&q=85"
-  },
-  "servicesTitle": "Serviços premium\npara a tua viatura.",
-  "servicesText": "Trabalhamos com materiais de alta qualidade e técnicas avançadas para entregar o melhor resultado.",
-  "calculatorImage": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=85",
-  "photographersImage": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=85",
-  "contact": {
-    "address": "Rua da Bela Vista n.º1 Casal Pinheiro\nCarregado, Portugal\n2580-507",
-    "phone": "+351 912 345 678",
-    "email": "geral@creativegarage.pt",
-    "instagram": "@creativegarage.pt",
-    "mapUrl": "https://maps.google.com/?q=Rua%20da%20Bela%20Vista%201%20Casal%20Pinheiro%20Carregado",
-    "jobsEmail": "mailto:geral@creativegarage.pt?subject=Candidatura%20Creative%20Garage"
-  }
+    "logo": "assets/logo/creative-logo.webp",
+    "hero": {
+        "title": "Elevamos\no teu estilo.",
+        "tags": "Car Wrap • Performance • Detailing",
+        "note": "A Creative não é uma Oficina Walk In. É obrigatória a marcação atempada de visitas.",
+        "financeSmall": "Possibilidade de parcelar\naté 12x sem juros.",
+        "image": "assets/uploads/e06e3593-e4e8-4f16-986a-06d38a10c9ca-1920w-20260427165252-0e42ac.webp"
+    },
+    "servicesTitle": "Serviços premium\npara a tua viatura.",
+    "servicesText": "Trabalhamos com materiais de alta qualidade e técnicas avançadas para entregar o melhor resultado.",
+    "calculatorImage": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=85",
+    "photographersImage": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=85",
+    "contact": {
+        "address": "Rua da Bela Vista n.º1 Casal Pinheiro\nCarregado, Portugal\n2580-507",
+        "phone": "+351 912 345 678",
+        "email": "geral@creativegarage.pt",
+        "instagram": "@creativegarage.pt",
+        "mapUrl": "https://maps.google.com/?q=Rua%20da%20Bela%20Vista%201%20Casal%20Pinheiro%20Carregado",
+        "jobsEmail": "mailto:geral@creativegarage.pt?subject=Candidatura%20Creative%20Garage"
+    }
 }
