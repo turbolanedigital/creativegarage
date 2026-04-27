@@ -17,7 +17,8 @@ async function init(){
   $('#servicesGrid').innerHTML = services.map(s=>`<article class="service-card" style="--img:${cssUrl(s.image)}"><div class="service-icon">${s.icon||'◌'}</div><h3>${nl(s.title)}</h3><small>A partir de</small><strong>${euro(s.price)}</strong></article>`).join('');
   $('#serviceSelect').innerHTML = services.map(s=>`<option value="${s.price}">${s.title.replace(/\n/g,' ')} — desde ${euro(s.price)}</option>`).join('');
   $('#galleryStrip').innerHTML = gallery.map(g=>`<div class="gallery-item" title="${g.title}" style="--img:${cssUrl(g.image)}"></div>`).join('');
-  $('#partnersGrid').innerHTML = partners.map(p=>`<div class="partner">${p.image?`<img src="${imageUrl(p.image)}" alt="${p.name}">`:''}<strong>${p.name}</strong><span>${p.location}</span></div>`).join('');
+  const partnerItems = partners.map(p=>`<div class="partner">${p.image?`<img src="${imageUrl(p.image)}" alt="${p.name}">`:''}<strong>${p.name}</strong><span>${p.location}</span></div>`).join('');
+  $('#partnersGrid').innerHTML = `<div class="partners-track">${partnerItems}${partnerItems}</div>`;
   $('#addressText').innerHTML = nl(content.contact.address);
   $('#mapLink').href = content.contact.mapUrl;
   $('#jobsLink').href = content.contact.jobsEmail;

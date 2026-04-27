@@ -11,34 +11,34 @@
         "title": "Half Wrap",
         "price": 850,
         "icon": "◩",
-        "image": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80"
+        "image": "assets/uploads/half_creative-20260427165603-313481.webp"
     },
     {
         "id": "detailing",
         "title": "Lavagem e Manutenção\nVikingDetails",
         "price": 55,
         "icon": "◌",
-        "image": "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=80"
+        "image": "assets/uploads/lavagem_creative-20260427165609-e50d32.webp"
     },
     {
         "id": "design-wrap",
         "title": "Design Wrap",
         "price": 550,
         "icon": "✍",
-        "image": "https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=900&q=80"
+        "image": "assets/uploads/design_creative-20260427165615-4b17e6.webp"
     },
     {
         "id": "embossed-wrap",
         "title": "Embossed Wrap",
         "price": 2100,
         "icon": "✤",
-        "image": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=900&q=80"
+        "image": "assets/uploads/embossed_creative-20260427165620-5d6111.webp"
     },
     {
         "id": "printed-wrap",
         "title": "Printed Wrap",
         "price": 2100,
         "icon": "▣",
-        "image": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80"
+        "image": "assets/uploads/printed_creative-20260427165624-87bef0.webp"
     }
 ]

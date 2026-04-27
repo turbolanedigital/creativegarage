@@ -1,10 +1,42 @@
 [
-  {"name":"Swaptune","location":"Bélgica","image":""},
-  {"name":"CreativePower","location":"Carregado","image":""},
-  {"name":"Cover Up","location":"Porto Alto","image":""},
-  {"name":"Vakalhau","location":"Cacém","image":""},
-  {"name":"VikingDetails","location":"Quinta do Anjo","image":""},
-  {"name":"DetailKult","location":"Almada","image":""},
-  {"name":"AutoEventos","location":"Portugal","image":""},
-  {"name":"UphillClub","location":"Margem Sul","image":""}
+    {
+        "name": "Swaptune",
+        "location": "Bélgica",
+        "image": "assets/uploads/swaptune-round-640w-copiar-1920w-20260427170003-07d334.webp"
+    },
+    {
+        "name": "CreativePower",
+        "location": "Carregado",
+        "image": "assets/uploads/creativepower-round-640w-copiar-1920w-20260427170009-7e0f06.webp"
+    },
+    {
+        "name": "Cover Up",
+        "location": "Porto Alto",
+        "image": "assets/uploads/coverup-round-640w-copiar-1920w-1-20260427170018-4b9daa.webp"
+    },
+    {
+        "name": "Vakalhau",
+        "location": "Cacém",
+        "image": "assets/uploads/vakalhau-round-640w-copiar-1920w-20260427170023-56c3cf.webp"
+    },
+    {
+        "name": "Viking Details",
+        "location": "Quinta do Anjo",
+        "image": "assets/uploads/vikingdetails-round-1920w-20260427170027-4fc78f.webp"
+    },
+    {
+        "name": "Detail Kult",
+        "location": "Almada",
+        "image": "assets/uploads/detailkult-round-1920w-20260427170033-157bbc.webp"
+    },
+    {
+        "name": "Auto Eventos",
+        "location": "Portugal",
+        "image": "assets/uploads/autoeventos-round-1920w-20260427170037-2a79c8.webp"
+    },
+    {
+        "name": "Uphill Club",
+        "location": "Margem Sul",
+        "image": "assets/uploads/uphill-round-1920w-20260427170043-913c45.webp"
+    }
 ]
