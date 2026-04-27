@@ -43,6 +43,23 @@ function closeGallery(){
   modal.setAttribute('aria-hidden','true');
   document.body.classList.remove('modal-open');
 }
+function openLegal(type){
+  const modal = $('#legalModal');
+  const title = type === 'privacy' ? 'Política de Privacidade' : 'Termos e Condições';
+  const template = type === 'privacy' ? $('#privacyTemplate') : $('#termsTemplate');
+  $('#legalModalTitle').textContent = title;
+  $('#legalModalBody').innerHTML = template.innerHTML;
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+}
+function closeLegal(){
+  const modal = $('#legalModal');
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden','true');
+  $('#legalModalBody').innerHTML = '';
+  document.body.classList.remove('modal-open');
+}
 async function init(){
   const [content,services,gallery,partners] = await Promise.all([getJSON('data/content.json'),getJSON('data/services.json'),getJSON('data/gallery.json'),getJSON('data/partners.json')]);
   $$('[data-image-content]').forEach(el=>{ el.src = imageUrl(byPath(content,el.dataset.imageContent)); });
@@ -66,7 +83,9 @@ async function init(){
   $('#galleryModalGrid').addEventListener('click',e=>{ const item=e.target.closest('[data-gallery-index]'); if(item) showGalleryImage(gallery,Number(item.dataset.galleryIndex)); });
   $('[data-gallery-back]').addEventListener('click',showGalleryGrid);
   $$('[data-gallery-close]').forEach(el=>el.addEventListener('click',closeGallery));
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeGallery(); });
+  $$('[data-legal-open]').forEach(el=>el.addEventListener('click',()=>openLegal(el.dataset.legalOpen)));
+  $$('[data-legal-close]').forEach(el=>el.addEventListener('click',closeLegal));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeGallery(); closeLegal(); } });
 }
 $('[data-nav-toggle]').addEventListener('click',()=> $('[data-nav]').classList.toggle('is-open'));
 window.addEventListener('scroll',()=>$('#topbar').classList.toggle('is-scrolled',scrollY>20));

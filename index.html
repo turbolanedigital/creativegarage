@@ -167,8 +167,8 @@
     </div>
     <div class="container footer-bottom">
       <span>© Creative Garage 2026. Todos os direitos reservados.</span>
-      <a href="politica-privacidade.html">Política de Privacidade</a>
-      <a href="termos-condicoes.html">Termos e Condições</a>
+      <button type="button" data-legal-open="privacy">Política de Privacidade</button>
+      <button type="button" data-legal-open="terms">Termos e Condições</button>
       <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noreferrer">Livro de Reclamações</a>
     </div>
   </footer>
@@ -188,6 +188,95 @@
       </figure>
     </div>
   </div>
+
+  <div class="legal-modal" id="legalModal" aria-hidden="true">
+    <div class="legal-modal-backdrop" data-legal-close></div>
+    <div class="legal-modal-panel" role="dialog" aria-modal="true" aria-label="Informação legal">
+      <div class="legal-modal-top">
+        <strong id="legalModalTitle">Informação legal</strong>
+        <button class="gallery-close" type="button" aria-label="Fechar" data-legal-close>×</button>
+      </div>
+      <div class="legal-modal-body" id="legalModalBody"></div>
+    </div>
+  </div>
+
+  <template id="privacyTemplate">
+    <section class="legal-content">
+      <h2>Política de Privacidade</h2>
+      <p>Esta política explica como recolhemos, utilizamos e protegemos os dados pessoais fornecidos através do website, redes sociais, contactos diretos e pedidos de orçamento.</p>
+      <h2>1. Responsável pelo tratamento</h2>
+      <p>O responsável pelo tratamento dos dados é CreAtive Design and Wrapping de Guilherme D. F. de Mira, com atividade em Azambuja - Carregado, Portugal.</p>
+      <h2>2. Dados recolhidos</h2>
+      <p>Podemos recolher nome, contacto telefónico, email, identificação do veículo, informações sobre o serviço pretendido, mensagens enviadas, dados de marcação e outros dados fornecidos voluntariamente pelo Cliente.</p>
+      <h2>3. Finalidades</h2>
+      <p>Os dados são utilizados para responder a pedidos, preparar orçamentos, gerir marcações, executar serviços, prestar apoio ao Cliente, cumprir obrigações legais e manter registos administrativos.</p>
+      <h2>4. Base legal</h2>
+      <p>O tratamento baseia-se na execução de diligências pré-contratuais ou contratuais, no cumprimento de obrigações legais, no interesse legítimo da atividade e, quando aplicável, no consentimento do titular dos dados.</p>
+      <h2>5. Conservação</h2>
+      <p>Os dados são conservados pelo período necessário para as finalidades indicadas, cumprimento de obrigações legais, defesa de direitos ou arquivo administrativo relacionado com os serviços prestados.</p>
+      <h2>6. Partilha de dados</h2>
+      <p>Os dados podem ser partilhados com prestadores técnicos, contabilísticos, jurídicos, parceiros envolvidos na execução do serviço ou entidades públicas quando legalmente exigido.</p>
+      <h2>7. Direitos do titular</h2>
+      <p>O Cliente pode solicitar acesso, retificação, apagamento, limitação, oposição ao tratamento ou portabilidade dos seus dados, nos termos da legislação aplicável.</p>
+      <h2>8. Cookies e estatísticas</h2>
+      <p>O website pode utilizar cookies técnicos e ferramentas de estatística ou medição, quando aplicável, para melhorar a experiência de navegação e compreender a utilização do site.</p>
+      <h2>9. Comunicações</h2>
+      <p>Os contactos fornecidos podem ser utilizados para responder a pedidos, confirmar marcações, enviar informação relacionada com serviços e tratar reclamações ou garantias.</p>
+      <h2>10. Reclamações</h2>
+      <p>O Cliente pode apresentar reclamação através do Livro de Reclamações em <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noreferrer">www.livroreclamacoes.pt</a>.</p>
+      <p class="legal-note">Última atualização: 07-08-2025, Carregado, Lisboa, Portugal.</p>
+    </section>
+  </template>
+
+  <template id="termsTemplate">
+    <section class="legal-content">
+      <h2>Termos e Condições</h2>
+      <p><strong>1.1</strong> Assegura-se o Direito a uma Garantia Legal de Dois Anos para Defeitos de Material, de acordo com a legislação portuguesa. No caso de serviços prestados a partir de dezembro de 2021, aplica-se o prazo de um ano e meio de garantia para os serviços realizados, conforme a Regra Europeia.</p>
+      <p><strong>1.2</strong> O pedido de reparação ou a comunicação de defeito ou falha será considerado a partir da data de marcação da intervenção ou reparação.</p>
+      <p><strong>1.3</strong> O pedido de devolução de valores pagos, se resultante de descontentamento com o serviço prestado ou qualidade do material, só será considerado válido se realizado no prazo máximo de 14 dias a contar da entrega da viatura.</p>
+      <h2>2. Responsabilidades e Comunicações</h2>
+      <p><strong>2.1</strong> O ENI/Prestador de Serviços reserva-se o direito de decisão final sobre a aceitação ou não da devolução de valores cobrados.</p>
+      <p><strong>2.2</strong> Todos os assuntos relacionados com garantias, reclamações, alterações de marcações ou qualquer outra comunicação devem ser tratados exclusivamente por escrito.</p>
+      <p><strong>2.3</strong> Para cores especiais como saturadas, compensadas, camaleónicas, ultra brilho, matte e ultra matte, aplica-se única e exclusivamente a garantia da marca do material.</p>
+      <p><strong>2.4</strong> Ao aceitar a execução do serviço, o Cliente declara que leu, compreendeu e aceita os termos aqui descritos.</p>
+      <h2>3. Remoção de Vinil</h2>
+      <p><strong>3.1</strong> Ao contratar o serviço de remoção de vinil, o Cliente compreende e aceita ser o único responsável por danos resultantes do estado da pintura original, fragilidade ou deterioração.</p>
+      <p><strong>3.2</strong> O Cliente compromete-se a assumir o pagamento da lavagem e remoção de colas, caso se revele necessário.</p>
+      <p><strong>3.3</strong> A Empresa ou ENI não se responsabiliza por danos causados durante limpeza ou remoção efetuada fora das suas instalações.</p>
+      <h2>4. Marcações e Comparência</h2>
+      <p><strong>4.1</strong> As marcações são agendadas conforme a disponibilidade da Empresa ou ENI.</p>
+      <p><strong>4.2</strong> O Cliente compromete-se a comparecer na data marcada.</p>
+      <p><strong>4.3</strong> A Empresa ou ENI reserva-se o direito de recusar remarcações resultantes de faltas sem justificação válida.</p>
+      <p><strong>4.4</strong> Caso uma remarcação seja aceite, o Cliente dispõe de 6 meses a contar da data original para realizar o serviço.</p>
+      <p><strong>4.5</strong> No caso de não comparência sem aviso prévio, poderão ser aplicados custos adicionais.</p>
+      <h2>5. Tuning, Reprogramações e Motor</h2>
+      <p><strong>5.1</strong> Serviços de tuning, reprogramação, alterações ao software do motor, desativações e serviços similares não possuem garantia de desempenho, funcionamento ou durabilidade.</p>
+      <p><strong>5.2</strong> O Cliente reconhece que alterações ao veículo podem anular garantia do fabricante e gerar implicações legais.</p>
+      <p><strong>5.3</strong> O Cliente assume responsabilidade por avarias ou danos ocorridos após a execução destes serviços.</p>
+      <p><strong>5.4</strong> A Creative Power e a Swaptune não se responsabilizam por danos durante testes de estrada, dyno, medições ou verificações.</p>
+      <p><strong>5.5</strong> O Cliente compreende os riscos associados e isenta ambas as entidades de responsabilidades futuras, legais ou mecânicas.</p>
+      <p><strong>5.6</strong> Reversões ou intervenções corretivas serão tratadas como novo serviço.</p>
+      <p><strong>5.7</strong> A Creative Power e a Swaptune reservam-se o direito de recusar serviços que possam comprometer a segurança.</p>
+      <h2>6. Validação Prévia e Aprovação Visual</h2>
+      <p><strong>6.1</strong> O Cliente é responsável por verificar o estado final do serviço no momento da entrega. Reclamações estéticas devem ser comunicadas no prazo máximo de 48 horas.</p>
+      <p><strong>6.2</strong> A não comunicação dentro do prazo será entendida como aceitação plena do serviço.</p>
+      <h2>7. Alterações Fora do Acordado</h2>
+      <p><strong>7.1</strong> Quaisquer alterações ao projeto original devem ser comunicadas e aprovadas por escrito antes da execução.</p>
+      <h2>8. Materiais Fornecidos pelo Cliente</h2>
+      <p><strong>8.1</strong> Sempre que o Cliente forneça material próprio, a Empresa ou ENI não se responsabiliza por danos, falhas de compatibilidade, durabilidade ou qualidade final.</p>
+      <p><strong>8.2</strong> O Cliente assume total responsabilidade pelo resultado final caso o material fornecido não cumpra requisitos técnicos adequados.</p>
+      <h2>9. Comunicação e Registos Visuais</h2>
+      <p><strong>9.1</strong> O Cliente aceita que a Creative Garage, Creative Power ou Swaptune possam fotografar ou filmar o processo e resultado final para fins promocionais, comerciais e arquivo técnico, salvo indicação contrária por escrito.</p>
+      <h2>10. Pagamentos, Sinalizações e Penalizações</h2>
+      <p><strong>10.1</strong> A reserva de qualquer serviço poderá requerer sinal. Em caso de cancelamento sem aviso prévio de 48h, o sinal poderá ser retido.</p>
+      <p><strong>10.2</strong> Os serviços só serão iniciados após pagamento prévio ou conforme acordado por escrito.</p>
+      <h2>11. Livro de Reclamações</h2>
+      <p>Disponível em <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noreferrer">www.livroreclamacoes.pt</a>.</p>
+      <p class="legal-note">Última Atualização dos Termos a 06-08-2025 em Azambuja, Lisboa, Portugal.</p>
+      <p class="legal-note">Última Revisão dos Termos a 07-08-2025 em Carregado, Lisboa, Portugal | Notas: Sem Alterações.</p>
+      <p class="legal-note">CreAtive Design and Wrapping de Guilherme D. F. de Mira | Azambuja - Carregado.</p>
+    </section>
+  </template>
 
   <script src="js/app.js"></script>
 </body>
