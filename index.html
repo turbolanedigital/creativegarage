@@ -117,7 +117,7 @@
           <p class="eyebrow">Últimos trabalhos</p>
           <h2>Paixão em cada detalhe.</h2>
         </div>
-        <a class="link-arrow" href="#contact">Ver galeria completa →</a>
+        <button class="link-arrow gallery-open" type="button" data-gallery-open>Ver galeria completa →</button>
       </div>
       <div class="container gallery-strip" id="galleryStrip"></div>
     </section>
@@ -172,6 +172,22 @@
       <a href="#">Livro de Reclamações</a>
     </div>
   </footer>
+
+  <div class="gallery-modal" id="galleryModal" aria-hidden="true">
+    <div class="gallery-modal-backdrop" data-gallery-close></div>
+    <div class="gallery-modal-panel" role="dialog" aria-modal="true" aria-label="Galeria Creative Garage">
+      <div class="gallery-modal-top">
+        <button class="gallery-back hidden" type="button" data-gallery-back>← Voltar à galeria</button>
+        <strong id="galleryModalTitle">Galeria</strong>
+        <button class="gallery-close" type="button" aria-label="Fechar galeria" data-gallery-close>×</button>
+      </div>
+      <div class="gallery-modal-grid" id="galleryModalGrid"></div>
+      <figure class="gallery-modal-view hidden" id="galleryModalView">
+        <img id="galleryModalImage" alt="">
+        <figcaption id="galleryModalCaption"></figcaption>
+      </figure>
+    </div>
+  </div>
 
   <script src="js/app.js"></script>
 </body>
