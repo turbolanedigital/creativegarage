@@ -1,6 +1,5 @@
 # Local/runtime files
 data/backups/
-assets/uploads/
 
 # Environment/config files
 .env
