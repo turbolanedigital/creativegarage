@@ -4,6 +4,8 @@ header('Content-Type: application/json; charset=utf-8');
 $apiKey = 'F2DUTq2EKN7XPyYD';
 $base = 'https://tuningspecs.com';
 $allowed = ['brand_id', 'model_id', 'generation_id', 'product_id'];
+$cacheDir = __DIR__ . '/../data/tuningspecs-cache';
+$cacheTtl = 60 * 60 * 24 * 30;
 
 function fetch_url($url) {
   if (function_exists('curl_init')) {
@@ -31,6 +33,23 @@ function absolute_url($url) {
 
 function text_value($html) {
   return trim(html_entity_decode(strip_tags($html), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+}
+
+function cache_key($prefix, $parts) {
+  ksort($parts);
+  return $prefix . '-' . sha1(json_encode($parts)) . '.json';
+}
+
+function cache_read($dir, $key, $ttl) {
+  $file = $dir . DIRECTORY_SEPARATOR . $key;
+  if (!is_file($file) || time() - filemtime($file) > $ttl) return null;
+  $data = json_decode(file_get_contents($file), true);
+  return is_array($data) ? $data : null;
+}
+
+function cache_write($dir, $key, $data) {
+  if (!is_dir($dir)) mkdir($dir, 0755, true);
+  file_put_contents($dir . DIRECTORY_SEPARATOR . $key, json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 }
 
 function parse_result($html) {
@@ -100,30 +119,47 @@ foreach ($allowed as $key) {
   }
 }
 
-$url = $base . '/typeloader.php?' . http_build_query($query);
-$body = fetch_url($url);
-if ($body === false) {
-  http_response_code(502);
-  echo json_encode(['ok' => false, 'message' => 'Erro ao contactar TuningSpecs']);
-  exit;
-}
+$loaderCacheKey = cache_key('loader', $query);
+$data = cache_read($cacheDir, $loaderCacheKey, $cacheTtl);
 
-$data = json_decode($body, true);
-if (!is_array($data)) {
-  http_response_code(502);
-  echo json_encode(['ok' => false, 'message' => 'Resposta inválida da TuningSpecs']);
-  exit;
+if ($data === null) {
+  $url = $base . '/typeloader.php?' . http_build_query($query);
+  $body = fetch_url($url);
+  if ($body === false) {
+    http_response_code(502);
+    echo json_encode(['ok' => false, 'message' => 'Erro ao contactar TuningSpecs']);
+    exit;
+  }
+
+  $data = json_decode($body, true);
+  if (!is_array($data)) {
+    http_response_code(502);
+    echo json_encode(['ok' => false, 'message' => 'Resposta inválida da TuningSpecs']);
+    exit;
+  }
+  cache_write($cacheDir, $loaderCacheKey, $data);
 }
 
 if (!empty($query['product_id']) && !empty($data['data']['item_url'])) {
-  $resultUrl = $base . '/api/iframe.php?' . http_build_query([
+  $resultQuery = [
     'user' => $apiKey,
     'language' => 'pt',
     'car' => $data['data']['item_url']
-  ]);
-  $html = fetch_url($resultUrl);
-  if ($html !== false) {
-    $data['data']['result'] = parse_result($html);
+  ];
+  $resultCacheKey = cache_key('result', $resultQuery);
+  $result = cache_read($cacheDir, $resultCacheKey, $cacheTtl);
+
+  if ($result === null) {
+    $resultUrl = $base . '/api/iframe.php?' . http_build_query($resultQuery);
+    $html = fetch_url($resultUrl);
+    if ($html !== false) {
+      $result = parse_result($html);
+      cache_write($cacheDir, $resultCacheKey, $result);
+    }
+  }
+
+  if ($result !== null) {
+    $data['data']['result'] = $result;
   }
 }
 

@@ -18,6 +18,18 @@ function setLoading(isLoading) {
   $('#remapLoader').textContent = isLoading ? 'A carregar dados TuningSpecs...' : '';
 }
 
+function params() {
+  const search = new URLSearchParams();
+  Object.entries(fields).forEach(([key, el]) => {
+    if (el.value) search.set(key, el.value);
+  });
+  return search;
+}
+
+function browserCacheKey() {
+  return `creative-power:${params().toString() || 'root'}`;
+}
+
 function optionsFromProductGroups(groups) {
   if (!groups || Array.isArray(groups)) return groups || [];
   return Object.entries(groups).flatMap(([group, items]) =>
@@ -54,19 +66,13 @@ function resetAfter(name) {
   clearResult();
 }
 
-function params() {
-  const search = new URLSearchParams();
-  Object.entries(fields).forEach(([key, el]) => {
-    if (el.value) search.set(key, el.value);
-  });
-  return search;
-}
-
 async function loadOptions(changed = null) {
   if (changed) resetAfter(changed);
   setLoading(true);
-  const res = await fetch(`${API}?${params().toString()}`, { cache: 'no-store' });
-  const json = await res.json();
+  const key = browserCacheKey();
+  const cached = sessionStorage.getItem(key);
+  const json = cached ? JSON.parse(cached) : await fetch(`${API}?${params().toString()}`, { cache: 'no-store' }).then(res => res.json());
+  if (!cached && json.ok) sessionStorage.setItem(key, JSON.stringify(json));
   setLoading(false);
 
   if (!json.ok) throw new Error(json.message || 'Erro ao carregar dados');
