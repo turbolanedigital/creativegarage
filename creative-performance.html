@@ -47,18 +47,56 @@
         <div class="remap-intro">
           <p class="eyebrow">Calculadora de performance</p>
           <h2>Descobre quanto<br>podes ganhar.</h2>
-          <p>Escolhe marca, modelo e motorização na base de dados TuningSpecs para veres os ganhos estimados de remap.</p>
+          <p>Escolhe marca, modelo, ano e motorização na base de dados TuningSpecs para veres os ganhos estimados de remap.</p>
         </div>
 
-        <div class="tuning-specs-frame">
-          <iframe
-            title="Calculadora de remap Creative Power"
-            src="https://tuningspecs.com/api/iframe.php?user=F2DUTq2EKN7XPyYD&language=pt"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <form class="remap-form" id="remapForm">
+          <div class="grid-2">
+            <label>Marca
+              <select id="makeSelect"></select>
+            </label>
+            <label>Modelo
+              <select id="modelSelect" disabled></select>
+            </label>
+          </div>
+          <div class="grid-2">
+            <label>Ano / geração
+              <select id="generationSelect" disabled></select>
+            </label>
+            <label>Motor / versão
+              <select id="engineSelect" disabled></select>
+            </label>
+          </div>
+          <p class="remap-loader" id="remapLoader">A carregar dados TuningSpecs...</p>
+        </form>
+
+        <div class="remap-result" id="remapResult">
+          <div class="result-card">
+            <span>Original</span>
+            <strong id="stockHp">-- cv</strong>
+            <small id="stockTorque">-- Nm</small>
+          </div>
+          <div class="result-card result-card-hot">
+            <span>Após remap</span>
+            <strong id="tunedHp">-- cv</strong>
+            <small id="tunedTorque">-- Nm</small>
+          </div>
+          <div class="result-card">
+            <span>Ganho estimado</span>
+            <strong id="gainHp">+-- cv</strong>
+            <small id="gainTorque">+-- Nm</small>
+          </div>
         </div>
 
-        <p class="remap-disclaimer">Se a calculadora não carregar, abre diretamente em <a href="https://tuningspecs.com/api/iframe.php?user=F2DUTq2EKN7XPyYD&language=pt" target="_blank" rel="noreferrer">TuningSpecs Creative Power</a>. Valores meramente indicativos; a potência real pode variar conforme estado mecânico, combustível, temperatura, altitude e calibração final.</p>
+        <div class="remap-details hidden" id="remapDetails">
+          <div>
+            <h3 id="vehicleName">Seleciona uma viatura</h3>
+            <table id="specTable"></table>
+          </div>
+          <img id="dynographImage" alt="Curva de potência">
+        </div>
+
+        <p class="remap-disclaimer">Dados fornecidos pela TuningSpecs. Valores meramente indicativos; a potência real pode variar conforme estado mecânico, combustível, temperatura, altitude e calibração final.</p>
       </div>
     </section>
 
@@ -73,5 +111,6 @@
       </div>
     </section>
   </main>
+  <script src="js/performance.js"></script>
 </body>
 </html>
