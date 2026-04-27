@@ -1,0 +1,179 @@
+﻿<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creative Garage â€” Car Wrap, Performance e Detailing</title>
+  <meta name="description" content="Creative Garage: car wrap, performance, detailing e projetos automÃ³veis personalizados no Carregado." />
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#home" aria-label="Creative Garage">
+      <img src="assets/logo/creative-logo.webp" alt="Creative Garage" />
+    </a>
+    <button class="nav-toggle" aria-label="Abrir menu" data-nav-toggle><span></span><span></span><span></span></button>
+    <nav class="nav" data-nav>
+      <a href="#home">InÃ­cio</a>
+      <a href="#services">ServiÃ§os</a>
+      <a href="#calculator">Calculadora</a>
+      <a href="#gallery">Galeria</a>
+      <a href="#about">Sobre nÃ³s</a>
+      <a href="#partners">Parceiros</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+    <a class="btn btn-outline btn-visit" href="#contact">Marcar visita</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-bg" data-hero-bg></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow spaced">Creative Garage</p>
+          <h1 data-content="hero.title">Elevamos<br>o teu estilo.</h1>
+          <p class="hero-tags" data-content="hero.tags">Car Wrap â€¢ Performance â€¢ Detailing</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="#services">Ver serviÃ§os</a>
+            <a class="btn btn-dark" href="#calculator">Calcular orÃ§amento <span>â–¦</span></a>
+          </div>
+          <div class="hero-note">
+            <span class="note-icon">â“˜</span>
+            <span data-content="hero.note">A Creative nÃ£o Ã© uma Oficina Walk In. Ã‰ obrigatÃ³ria a marcaÃ§Ã£o atempada de visitas.</span>
+          </div>
+        </div>
+        <div class="hero-finance">
+          <small data-content="hero.financeSmall">Possibilidade de parcelar<br>atÃ© 12x sem juros.</small>
+          <strong>12X</strong>
+          <span>sem<br>juros</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section services-section">
+      <div class="container split-section">
+        <aside class="section-intro">
+          <p class="eyebrow">O que fazemos</p>
+          <h2 data-content="servicesTitle">ServiÃ§os premium<br>para a tua viatura.</h2>
+          <div class="divider"></div>
+          <p data-content="servicesText">Trabalhamos com materiais de alta qualidade e tÃ©cnicas avanÃ§adas para entregar o melhor resultado.</p>
+          <a class="btn btn-outline" href="#calculator">Ver orÃ§amento</a>
+        </aside>
+        <div class="service-grid" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <section id="calculator" class="section calculator-band">
+      <div class="container calc-card">
+        <div class="calc-image" data-calc-bg></div>
+        <div class="calc-content">
+          <p class="eyebrow">Descobre o teu investimento</p>
+          <h2>Calcula o orÃ§amento<br>do teu projeto.</h2>
+          <p>Escolhe o serviÃ§o, as opÃ§Ãµes e recebe imediatamente uma estimativa.</p>
+          <form class="quote-form" id="quoteForm">
+            <div class="field-row">
+              <label>ServiÃ§o
+                <select id="serviceSelect"></select>
+              </label>
+              <label>DimensÃ£o do projeto
+                <select id="sizeSelect">
+                  <option value="1">Normal</option>
+                  <option value="1.2">MÃ©dio</option>
+                  <option value="1.45">Grande / complexo</option>
+                </select>
+              </label>
+            </div>
+            <div class="field-row">
+              <label>UrgÃªncia
+                <select id="urgencySelect">
+                  <option value="1">Normal</option>
+                  <option value="1.25">Urgente</option>
+                </select>
+              </label>
+              <label>Extras
+                <select id="extrasSelect">
+                  <option value="0">Sem extras</option>
+                  <option value="120">Design adicional</option>
+                  <option value="250">PreparaÃ§Ã£o intensiva</option>
+                  <option value="400">Projeto completo premium</option>
+                </select>
+              </label>
+            </div>
+            <div class="quote-result">
+              <span>Estimativa desde</span>
+              <strong id="quoteTotal">0â‚¬</strong>
+              <small>Valor indicativo sujeito a avaliaÃ§Ã£o da viatura.</small>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery-section">
+      <div class="container section-head-row">
+        <div>
+          <p class="eyebrow">Ãšltimos trabalhos</p>
+          <h2>PaixÃ£o em cada detalhe.</h2>
+        </div>
+        <a class="link-arrow" href="#contact">Ver galeria completa â†’</a>
+      </div>
+      <div class="container gallery-strip" id="galleryStrip"></div>
+    </section>
+
+    <section id="about" class="section photographers">
+      <div class="container photographer-card">
+        <div class="photo-copy">
+          <p class="eyebrow">FotÃ³grafos</p>
+          <h2>Queres alimentar<br>o teu portfÃ³lio?</h2>
+          <p>Junta-te Ã s nossas sessÃµes e fotografa viaturas incrÃ­veis em ambientes Ãºnicos.</p>
+          <a class="btn btn-outline" href="#contact">Saber mais</a>
+        </div>
+        <div class="session-box">
+          <p class="eyebrow">PrÃ³ximas sessÃµes</p>
+          <strong>Nada de momento</strong>
+          <span>Fica atento Ã s nossas redes sociais para novas sessÃµes.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="partners" class="partners-section">
+      <div class="container">
+        <p class="eyebrow">Parceiros e recomendaÃ§Ãµes</p>
+        <div class="partners-grid" id="partnersGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Onde estamos</h3>
+        <p id="addressText"></p>
+        <a class="btn btn-outline" id="mapLink" target="_blank" rel="noreferrer">Ver no mapa</a>
+      </div>
+      <div>
+        <h3>Marca uma visita!</h3>
+        <p>Atendimento por marcaÃ§Ã£o para garantir o melhor serviÃ§o e experiÃªncia.</p>
+        <ul class="contact-list" id="contactList"></ul>
+      </div>
+      <div>
+        <h3>Queres fazer parte da equipa?</h3>
+        <p>Estamos sempre Ã  procura de talento apaixonado por automÃ³veis. Envia-nos o teu CV.</p>
+        <a class="btn btn-outline" id="jobsLink">Enviar candidatura</a>
+      </div>
+      <div class="footer-logo"><img src="assets/logo/creative-logo.webp" alt="Creative Garage"></div>
+    </div>
+    <div class="container footer-bottom">
+      <span>Â© Creative Garage 2026. Todos os direitos reservados.</span>
+      <a href="#">PolÃ­tica de Privacidade</a>
+      <a href="#">Termos e CondiÃ§Ãµes</a>
+      <a href="#">Livro de ReclamaÃ§Ãµes</a>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
+

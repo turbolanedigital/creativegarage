@@ -1,0 +1,19 @@
+# Local/runtime files
+data/backups/
+assets/uploads/
+
+# Environment/config files
+.env
+.env.*
+!.env.example
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and archives
+*.log
+*.zip
+*.rar

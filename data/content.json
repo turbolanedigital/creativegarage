@@ -1,0 +1,21 @@
+﻿{
+  "hero": {
+    "title": "Elevamos\no teu estilo.",
+    "tags": "Car Wrap â€¢ Performance â€¢ Detailing",
+    "note": "A Creative nÃ£o Ã© uma Oficina Walk In. Ã‰ obrigatÃ³ria a marcaÃ§Ã£o atempada de visitas.",
+    "financeSmall": "Possibilidade de parcelar\natÃ© 12x sem juros.",
+    "image": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=2200&q=85"
+  },
+  "servicesTitle": "ServiÃ§os premium\npara a tua viatura.",
+  "servicesText": "Trabalhamos com materiais de alta qualidade e tÃ©cnicas avanÃ§adas para entregar o melhor resultado.",
+  "calculatorImage": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=85",
+  "photographersImage": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=85",
+  "contact": {
+    "address": "Rua da Bela Vista n.Âº1 Casal Pinheiro\nCarregado, Portugal\n2580-507",
+    "phone": "+351 912 345 678",
+    "email": "geral@creativegarage.pt",
+    "instagram": "@creativegarage.pt",
+    "mapUrl": "https://maps.google.com/?q=Rua%20da%20Bela%20Vista%201%20Casal%20Pinheiro%20Carregado",
+    "jobsEmail": "mailto:geral@creativegarage.pt?subject=Candidatura%20Creative%20Garage"
+  }
+}

@@ -1,0 +1,8 @@
+[
+  {"id":"performance","title":"Tuning e Performance\nCreative Power","price":250,"icon":"⚡","image":"https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80"},
+  {"id":"half-wrap","title":"Half Wrap","price":850,"icon":"◩","image":"https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80"},
+  {"id":"detailing","title":"Lavagem e Manutenção\nVikingDetails","price":55,"icon":"◌","image":"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=80"},
+  {"id":"design-wrap","title":"Design Wrap","price":550,"icon":"✍","image":"https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=900&q=80"},
+  {"id":"embossed-wrap","title":"Embossed Wrap","price":2100,"icon":"✤","image":"https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=900&q=80"},
+  {"id":"printed-wrap","title":"Printed Wrap","price":2100,"icon":"▣","image":"https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80"}
+]
