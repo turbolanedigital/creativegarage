@@ -1,10 +1,10 @@
 [
-  {"name":"Swaptune","location":"Bélgica"},
-  {"name":"CreativePower","location":"Carregado"},
-  {"name":"Cover Up","location":"Porto Alto"},
-  {"name":"Vakalhau","location":"Cacém"},
-  {"name":"VikingDetails","location":"Quinta do Anjo"},
-  {"name":"DetailKult","location":"Almada"},
-  {"name":"AutoEventos","location":"Portugal"},
-  {"name":"UphillClub","location":"Margem Sul"}
+  {"name":"Swaptune","location":"Bélgica","image":""},
+  {"name":"CreativePower","location":"Carregado","image":""},
+  {"name":"Cover Up","location":"Porto Alto","image":""},
+  {"name":"Vakalhau","location":"Cacém","image":""},
+  {"name":"VikingDetails","location":"Quinta do Anjo","image":""},
+  {"name":"DetailKult","location":"Almada","image":""},
+  {"name":"AutoEventos","location":"Portugal","image":""},
+  {"name":"UphillClub","location":"Margem Sul","image":""}
 ]

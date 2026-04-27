@@ -4,16 +4,18 @@ const euro = v => `${Math.round(v).toLocaleString('pt-PT')}€`;
 async function getJSON(path){ const res = await fetch(path, {cache:'no-store'}); if(!res.ok) throw new Error(path); return res.json(); }
 function byPath(obj,path){return path.split('.').reduce((a,k)=>a?.[k],obj)}
 function nl(text){return String(text||'').replace(/\n/g,'<br>')}
+function image(path){return path || 'assets/logo/creative-logo.webp'}
 async function init(){
   const [content,services,gallery,partners] = await Promise.all([getJSON('data/content.json'),getJSON('data/services.json'),getJSON('data/gallery.json'),getJSON('data/partners.json')]);
-  document.documentElement.style.setProperty('--hero-image', `url('${content.hero.image}')`);
-  $('[data-calc-bg]').style.setProperty('--calc-image', `url('${content.calculatorImage}')`);
-  $('.photographer-card').style.setProperty('--photo-bg', `url('${content.photographersImage}')`);
+  $$('[data-image-content]').forEach(el=>{ el.src = image(byPath(content,el.dataset.imageContent)); });
+  document.documentElement.style.setProperty('--hero-image', `url('${image(content.hero.image)}')`);
+  $('[data-calc-bg]').style.setProperty('--calc-image', `url('${image(content.calculatorImage)}')`);
+  $('.photographer-card').style.setProperty('--photo-bg', `url('${image(content.photographersImage)}')`);
   $$('[data-content]').forEach(el=>{ el.innerHTML = nl(byPath(content,el.dataset.content)); });
   $('#servicesGrid').innerHTML = services.map(s=>`<article class="service-card" style="--img:url('${s.image}')"><div class="service-icon">${s.icon||'◌'}</div><h3>${nl(s.title)}</h3><small>A partir de</small><strong>${euro(s.price)}</strong></article>`).join('');
   $('#serviceSelect').innerHTML = services.map(s=>`<option value="${s.price}">${s.title.replace(/\n/g,' ')} — desde ${euro(s.price)}</option>`).join('');
   $('#galleryStrip').innerHTML = gallery.map(g=>`<div class="gallery-item" title="${g.title}" style="--img:url('${g.image}')"></div>`).join('');
-  $('#partnersGrid').innerHTML = partners.map(p=>`<div class="partner"><strong>${p.name}</strong><span>${p.location}</span></div>`).join('');
+  $('#partnersGrid').innerHTML = partners.map(p=>`<div class="partner">${p.image?`<img src="${p.image}" alt="${p.name}">`:''}<strong>${p.name}</strong><span>${p.location}</span></div>`).join('');
   $('#addressText').innerHTML = nl(content.contact.address);
   $('#mapLink').href = content.contact.mapUrl;
   $('#jobsLink').href = content.contact.jobsEmail;
