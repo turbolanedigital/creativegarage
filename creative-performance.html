@@ -47,68 +47,18 @@
         <div class="remap-intro">
           <p class="eyebrow">Calculadora de performance</p>
           <h2>Descobre quanto<br>podes ganhar.</h2>
-          <p>Escolhe uma viatura da lista ou introduz os valores atuais manualmente.</p>
+          <p>Escolhe marca, modelo e motorização na base de dados TuningSpecs para veres os ganhos estimados de remap.</p>
         </div>
 
-        <form class="remap-form" id="remapForm">
-          <div class="grid-2">
-            <label>Marca
-              <select id="makeSelect"></select>
-            </label>
-            <label>Modelo
-              <select id="modelSelect"></select>
-            </label>
-          </div>
-          <label>Motor / versão
-            <select id="engineSelect"></select>
-          </label>
-
-          <div class="manual-fields hidden" id="manualFields">
-            <div class="grid-2">
-              <label>Potência atual (cv)
-                <input id="manualHp" type="number" min="50" max="1500" value="150">
-              </label>
-              <label>Binário atual (Nm)
-                <input id="manualTorque" type="number" min="80" max="2000" value="320">
-              </label>
-            </div>
-            <div class="grid-2">
-              <label>Tipo de motor
-                <select id="fuelSelect">
-                  <option value="diesel">Diesel turbo</option>
-                  <option value="petrolTurbo">Gasolina turbo</option>
-                  <option value="petrolNa">Gasolina atmosférico</option>
-                </select>
-              </label>
-              <label>Stage
-                <select id="stageSelect">
-                  <option value="stage1">Stage 1</option>
-                  <option value="eco">Eco / eficiência</option>
-                </select>
-              </label>
-            </div>
-          </div>
-        </form>
-
-        <div class="remap-result" id="remapResult">
-          <div class="result-card">
-            <span>Original</span>
-            <strong id="stockHp">0 cv</strong>
-            <small id="stockTorque">0 Nm</small>
-          </div>
-          <div class="result-card result-card-hot">
-            <span>Após remap</span>
-            <strong id="tunedHp">0 cv</strong>
-            <small id="tunedTorque">0 Nm</small>
-          </div>
-          <div class="result-card">
-            <span>Ganho estimado</span>
-            <strong id="gainHp">+0 cv</strong>
-            <small id="gainTorque">+0 Nm</small>
-          </div>
+        <div class="tuning-specs-frame">
+          <iframe
+            title="Calculadora de remap Creative Power"
+            src="https://tuningspecs.com/api/iframe.php?user=F2DUTq2EKN7XPyYD&language=pt"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
-        <p class="remap-disclaimer">Valores meramente indicativos. A potência real pode variar conforme estado mecânico, combustível, temperatura, altitude, limites de segurança, caixa, embraiagem, turbo e leitura em banco de potência.</p>
+        <p class="remap-disclaimer">Se a calculadora não carregar, abre diretamente em <a href="https://tuningspecs.com/api/iframe.php?user=F2DUTq2EKN7XPyYD&language=pt" target="_blank" rel="noreferrer">TuningSpecs Creative Power</a>. Valores meramente indicativos; a potência real pode variar conforme estado mecânico, combustível, temperatura, altitude e calibração final.</p>
       </div>
     </section>
 
@@ -123,7 +73,5 @@
       </div>
     </section>
   </main>
-
-  <script src="js/performance.js"></script>
 </body>
 </html>
