@@ -66,6 +66,6 @@ if (!move_uploaded_file($file['tmp_name'], $target)) {
 
 echo json_encode([
   'ok' => true,
-  'message' => 'Imagem enviada. Clica em Guardar alterações para aplicar.',
+  'message' => 'Imagem enviada. Clica em Aplicar para guardar este card.',
   'path' => 'assets/uploads/' . $filename
 ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);

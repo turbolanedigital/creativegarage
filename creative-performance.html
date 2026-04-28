@@ -9,108 +9,168 @@
 </head>
 <body>
   <header class="topbar performance-topbar">
-    <a class="brand performance-brand" href="index.html" aria-label="Creative Garage">
-      <img src="assets/uploads/creativepower-round-640w-copiar-1920w-20260427170009-7e0f06.webp" alt="Creative Power">
+    <a class="brand performance-brand" href="index.html" aria-label="Creative Power">
+      <img src="assets/uploads/creativepower-round-640w-copiar-1920w-20260427170009-7e0f06.webp" alt="Creative Power" data-power-image="logo">
     </a>
     <nav class="nav performance-nav">
       <a href="index.html">Creative Garage</a>
       <a href="#calculator">Calculadora</a>
-      <a href="#services">Serviços</a>
+      <a href="#services">Servi&ccedil;os</a>
       <a href="index.html#contact">Contacto</a>
     </nav>
-    <a class="btn btn-outline btn-visit" href="index.html#contact">Marcar avaliação</a>
+    <a class="btn btn-outline btn-visit" href="index.html#contact">Marcar avalia&ccedil;&atilde;o</a>
   </header>
 
   <main class="performance-page">
     <section class="performance-hero">
-      <div class="performance-hero-bg"></div>
+      <div class="performance-hero-bg" data-power-bg="heroImage"></div>
       <div class="container performance-hero-grid">
         <div>
-          <p class="eyebrow">Creative Power</p>
-          <h1>Remaps para<br>máximo rendimento.</h1>
-          <p>Calcula uma estimativa de potência e binário após reprogramação Stage 1. Os valores são indicativos e dependem do estado da viatura, combustível, altitude, temperatura e calibração final.</p>
+          <p class="eyebrow" data-power-content="heroEyebrow">Creative Power x Swap Tune</p>
+          <h1 data-power-content="heroTitle">Remaps com<br>mais press&atilde;o.</h1>
+          <p data-power-content="heroText">Um servi&ccedil;o extra da Creative Garage para quem quer resposta, bin&aacute;rio e pot&ecirc;ncia com calibra&ccedil;&atilde;o profissional. Fazemos remaps atrav&eacute;s da Swap Tune, sempre com diagn&oacute;stico e valida&ccedil;&atilde;o pr&eacute;via.</p>
           <div class="hero-actions">
-            <a class="btn btn-light" href="#calculator">Calcular ganho</a>
-            <a class="btn btn-dark" href="index.html#contact">Falar connosco</a>
+            <a class="btn btn-light" href="#calculator" data-power-content="primaryButton">Calcular ganho</a>
+            <a class="btn btn-dark" href="index.html#contact" data-power-content="secondaryButton">Falar connosco</a>
           </div>
         </div>
         <div class="performance-hero-card">
-          <img src="assets/uploads/creativepower-round-640w-copiar-1920w-20260427170009-7e0f06.webp" alt="Creative Power">
-          <strong>Stage 1<br>ECU Remap</strong>
-          <span>Potência • Binário • Resposta</span>
+          <img class="performance-hero-logo" src="assets/uploads/creativepower-round-640w-copiar-1920w-20260427170009-7e0f06.webp" alt="Creative Power" data-power-image="logo">
         </div>
       </div>
     </section>
 
+    <section class="section performance-strip">
+      <div class="container performance-strip-grid">
+        <div><span>01</span><strong data-power-content="process1Title">Diagn&oacute;stico</strong><small data-power-content="process1Text">Leitura e valida&ccedil;&atilde;o antes de tocar no mapa.</small></div>
+        <div><span>02</span><strong data-power-content="process2Title">Calibra&ccedil;&atilde;o</strong><small data-power-content="process2Text">Remap orientado ao motor e estado da viatura.</small></div>
+        <div><span>03</span><strong data-power-content="process3Title">Entrega</strong><small data-power-content="process3Text">Valores indicativos, condu&ccedil;&atilde;o real e suporte p&oacute;s-servi&ccedil;o.</small></div>
+      </div>
+    </section>
+
     <section id="calculator" class="section remap-calculator-section">
-      <div class="container remap-calculator">
+      <div class="container remap-calculator" data-remap-calculator>
         <div class="remap-intro">
-          <p class="eyebrow">Calculadora de performance</p>
-          <h2>Descobre quanto<br>podes ganhar.</h2>
-          <p>Escolhe marca, modelo, ano e motorização na base de dados TuningSpecs para veres os ganhos estimados de remap.</p>
+          <p class="eyebrow" data-power-content="calculatorEyebrow">Calculadora de performance</p>
+          <h2 data-power-content="calculatorTitle">Descobre quanto<br>podes ganhar.</h2>
+          <p data-power-content="calculatorText">Escolhe a marca, modelo e motoriza&ccedil;&atilde;o para simular uma estimativa Stage 1. A base local &eacute; tempor&aacute;ria; a estrutura j&aacute; est&aacute; pronta para receber os dados externos da Swap Tune.</p>
         </div>
 
-        <form class="remap-form" id="remapForm">
-          <div class="grid-2">
+        <form class="remap-form" data-remap-form>
+          <div class="remap-form-top">
+            <span>Swap Tune data ready</span>
+            <strong>Remap estimator</strong>
+          </div>
+          <div class="remap-fields">
             <label>Marca
-              <select id="makeSelect"></select>
+              <select data-remap-brand required></select>
             </label>
             <label>Modelo
-              <select id="modelSelect" disabled></select>
+              <select data-remap-model required></select>
+            </label>
+            <label>Motor
+              <select data-remap-engine required></select>
             </label>
           </div>
-          <div class="grid-2">
-            <label>Ano / geração
-              <select id="generationSelect" disabled></select>
-            </label>
-            <label>Motor / versão
-              <select id="engineSelect" disabled></select>
-            </label>
+          <div class="remap-mode-row" role="group" aria-label="Tipo de calibra&ccedil;&atilde;o">
+            <button type="button" class="active" data-remap-mode="stage1">Stage 1</button>
+            <button type="button" data-remap-mode="eco">Eco map</button>
           </div>
-          <p class="remap-loader" id="remapLoader">A carregar dados TuningSpecs...</p>
+          <div class="remap-vehicle-summary" data-remap-summary></div>
         </form>
 
-        <div class="remap-result" id="remapResult">
-          <div class="result-card">
-            <span>Original</span>
-            <strong id="stockHp">-- cv</strong>
-            <small id="stockTorque">-- Nm</small>
-          </div>
-          <div class="result-card result-card-hot">
-            <span>Após remap</span>
-            <strong id="tunedHp">-- cv</strong>
-            <small id="tunedTorque">-- Nm</small>
-          </div>
-          <div class="result-card">
+        <div class="remap-result" data-remap-result>
+          <article class="result-card">
+            <span>Pot&ecirc;ncia original</span>
+            <strong data-stock-power>--</strong>
+            <small>cv</small>
+          </article>
+          <article class="result-card result-card-hot">
+            <span>Pot&ecirc;ncia ap&oacute;s remap</span>
+            <strong data-tuned-power>--</strong>
+            <small>cv</small>
+          </article>
+          <article class="result-card">
             <span>Ganho estimado</span>
-            <strong id="gainHp">+-- cv</strong>
-            <small id="gainTorque">+-- Nm</small>
-          </div>
+            <strong data-power-gain>--</strong>
+            <small>cv</small>
+          </article>
+          <article class="result-card">
+            <span>Bin&aacute;rio original</span>
+            <strong data-stock-torque>--</strong>
+            <small>Nm</small>
+          </article>
+          <article class="result-card result-card-hot">
+            <span>Bin&aacute;rio ap&oacute;s remap</span>
+            <strong data-tuned-torque>--</strong>
+            <small>Nm</small>
+          </article>
+          <article class="result-card">
+            <span>Ganho estimado</span>
+            <strong data-torque-gain>--</strong>
+            <small>Nm</small>
+          </article>
         </div>
 
-        <div class="remap-details hidden" id="remapDetails">
+        <div class="remap-details" data-remap-details>
           <div>
-            <h3 id="vehicleName">Seleciona uma viatura</h3>
-            <table id="specTable"></table>
+            <h3 data-remap-title>Seleciona uma viatura</h3>
+            <p data-remap-copy>Os dados apresentados usam uma base local tempor&aacute;ria. Quando a API da Swap Tune estiver ativa, esta mesma calculadora pode alimentar os campos automaticamente.</p>
           </div>
-          <img id="dynographImage" alt="Curva de potência">
+          <div class="remap-bars" aria-hidden="true">
+            <div>
+              <span>Pot&ecirc;ncia</span>
+              <i data-power-bar></i>
+            </div>
+            <div>
+              <span>Bin&aacute;rio</span>
+              <i data-torque-bar></i>
+            </div>
+          </div>
         </div>
 
-        <p class="remap-disclaimer">Dados fornecidos pela TuningSpecs. Valores meramente indicativos; a potência real pode variar conforme estado mecânico, combustível, temperatura, altitude e calibração final.</p>
+        <p class="remap-disclaimer">Valores meramente indicativos; a pot&ecirc;ncia real pode variar conforme estado mec&acirc;nico, combust&iacute;vel, temperatura, altitude e calibra&ccedil;&atilde;o final.</p>
       </div>
     </section>
 
     <section id="services" class="section performance-services">
       <div class="container">
-        <p class="eyebrow">Serviços Creative Power</p>
+        <p class="eyebrow" data-power-content="servicesEyebrow">Servi&ccedil;os Creative Power</p>
         <div class="performance-service-grid">
-          <article><h3>Stage 1</h3><p>Reprogramação segura para viaturas sem alterações mecânicas profundas.</p></article>
-          <article><h3>Eco map</h3><p>Afinação orientada para resposta mais eficiente e condução mais económica.</p></article>
-          <article><h3>Diagnóstico</h3><p>Leitura de parâmetros e validação do estado da viatura antes da intervenção.</p></article>
+          <article><h3 data-power-content="service1Title">Stage 1</h3><p data-power-content="service1Text">Reprograma&ccedil;&atilde;o segura para viaturas sem altera&ccedil;&otilde;es mec&acirc;nicas profundas.</p></article>
+          <article><h3 data-power-content="service2Title">Eco map</h3><p data-power-content="service2Text">Afina&ccedil;&atilde;o orientada para resposta mais eficiente e condu&ccedil;&atilde;o mais econ&oacute;mica.</p></article>
+          <article><h3 data-power-content="service3Title">Diagn&oacute;stico</h3><p data-power-content="service3Text">Leitura de par&acirc;metros e valida&ccedil;&atilde;o do estado da viatura antes da interven&ccedil;&atilde;o.</p></article>
         </div>
       </div>
     </section>
   </main>
-  <script src="js/performance.js"></script>
+
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3 data-power-content="footerTitle">Creative Power</h3>
+        <p data-power-content="footerText">Remaps, diagn&oacute;stico e performance como servi&ccedil;o adicional da Creative Garage.</p>
+        <a class="btn btn-outline" href="index.html#contact">Marcar avalia&ccedil;&atilde;o</a>
+      </div>
+      <div>
+        <h3 data-power-content="swapFooterTitle">Powered by Swap Tune</h3>
+        <p data-power-content="swapFooterText">Integra&ccedil;&atilde;o preparada para dados externos da Swap Tune e estimativas de ganhos por viatura.</p>
+        <a class="btn btn-outline" href="https://swaptune.eu/my-car" target="_blank" rel="noreferrer">Ver Swap Tune</a>
+      </div>
+      <div>
+        <h3 data-power-content="prepFooterTitle">Antes do remap</h3>
+        <p data-power-content="prepFooterText">Validamos o estado mec&acirc;nico, lemos par&acirc;metros e confirmamos se a viatura est&aacute; apta para interven&ccedil;&atilde;o.</p>
+      </div>
+      <div class="footer-logo performance-footer-logo"><img src="assets/uploads/creativepower-round-640w-copiar-1920w-20260427170009-7e0f06.webp" alt="Creative Power" data-power-image="logo"></div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; Creative Garage 2026. Todos os direitos reservados.</span>
+      <a href="politica-privacidade.html">Pol&iacute;tica de Privacidade</a>
+      <a href="termos-condicoes.html">Termos e Condi&ccedil;&otilde;es</a>
+      <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noreferrer">Livro de Reclama&ccedil;&otilde;es</a>
+    </div>
+  </footer>
+
+  <script src="js/performance-calculator.js"></script>
 </body>
 </html>

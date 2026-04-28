@@ -66,6 +66,7 @@ async function init(){
   document.documentElement.style.setProperty('--hero-image', cssUrl(content.hero.image));
   $('[data-calc-bg]').style.setProperty('--calc-image', cssUrl(content.calculatorImage));
   $('.photographer-card').style.setProperty('--photo-bg', cssUrl(content.photographersImage));
+  $('[data-power-callout]')?.style.setProperty('--power-callout-image', cssUrl(content.creativePower?.homeImage));
   $$('[data-content]').forEach(el=>{ el.innerHTML = nl(byPath(content,el.dataset.content)); });
   $('#servicesGrid').innerHTML = services.map(s=>`<article class="service-card" style="--img:${cssUrl(s.image)}"><div class="service-icon">${s.icon||'◌'}</div><h3>${nl(s.title)}</h3><small>A partir de</small><strong>${euro(s.price)}</strong></article>`).join('');
   $('#serviceSelect').innerHTML = services.map(s=>`<option value="${s.price}">${s.title.replace(/\n/g,' ')} — desde ${euro(s.price)}</option>`).join('');
