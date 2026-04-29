@@ -26,7 +26,7 @@
         "homeButton": "Calcular performance",
         "calculatorEyebrow": "Calculadora de performance",
         "calculatorTitle": "Descobre quanto\npodes ganhar.",
-        "calculatorText": "Escolhe a marca, modelo e motorizacao para simular uma estimativa Stage 1. A base local e temporaria; a estrutura ja esta pronta para receber os dados externos da Swap Tune.",
+        "calculatorText": "Escolhe a marca, modelo e motorizacao para simular uma estimativa Stage 1 com a base local Creative Power.",
         "process1Title": "Diagnostico",
         "process1Text": "Leitura e validacao antes de tocar no mapa.",
         "process2Title": "Calibracao",
@@ -43,7 +43,7 @@
         "footerTitle": "Creative Power",
         "footerText": "Remaps, diagnostico e performance como servico adicional da Creative Garage.",
         "swapFooterTitle": "Powered by Swap Tune",
-        "swapFooterText": "Integracao preparada para dados externos da Swap Tune e estimativas de ganhos por viatura.",
+        "swapFooterText": "Base Creative Power filtrada para estimativas de ganhos por viatura.",
         "prepFooterTitle": "Antes do remap",
         "prepFooterText": "Validamos o estado mecanico, lemos parametros e confirmamos se a viatura esta apta para intervencao."
     },

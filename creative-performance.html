@@ -53,12 +53,12 @@
         <div class="remap-intro">
           <p class="eyebrow" data-power-content="calculatorEyebrow">Calculadora de performance</p>
           <h2 data-power-content="calculatorTitle">Descobre quanto<br>podes ganhar.</h2>
-          <p data-power-content="calculatorText">Escolhe a marca, modelo e motoriza&ccedil;&atilde;o para simular uma estimativa Stage 1. A base local &eacute; tempor&aacute;ria; a estrutura j&aacute; est&aacute; pronta para receber os dados externos da Swap Tune.</p>
+          <p data-power-content="calculatorText">Escolhe a marca, modelo e motoriza&ccedil;&atilde;o para simular uma estimativa Stage 1 com a base local Creative Power.</p>
         </div>
 
         <form class="remap-form" data-remap-form>
           <div class="remap-form-top">
-            <span>Swap Tune data ready</span>
+            <span>Creative Power data</span>
             <strong>Remap estimator</strong>
           </div>
           <div class="remap-fields">
@@ -74,7 +74,7 @@
           </div>
           <div class="remap-mode-row" role="group" aria-label="Tipo de calibra&ccedil;&atilde;o">
             <button type="button" class="active" data-remap-mode="stage1">Stage 1</button>
-            <button type="button" data-remap-mode="eco">Eco map</button>
+            <button type="button" data-remap-mode="eco" hidden>Eco map</button>
           </div>
           <div class="remap-vehicle-summary" data-remap-summary></div>
         </form>
@@ -115,16 +115,26 @@
         <div class="remap-details" data-remap-details>
           <div>
             <h3 data-remap-title>Seleciona uma viatura</h3>
-            <p data-remap-copy>Os dados apresentados usam uma base local tempor&aacute;ria. Quando a API da Swap Tune estiver ativa, esta mesma calculadora pode alimentar os campos automaticamente.</p>
+            <p data-remap-copy>Os dados apresentados usam a base local filtrada para a calculadora Creative Power.</p>
           </div>
           <div class="remap-bars" aria-hidden="true">
             <div>
-              <span>Pot&ecirc;ncia</span>
-              <i data-power-bar></i>
+              <span>Pot&ecirc;ncia <strong data-power-bar-label>+-- cv</strong></span>
+              <div class="remap-bar-track">
+                <i data-power-stock-bar></i>
+                <b data-power-bar></b>
+                <em data-power-marker></em>
+              </div>
+              <small><span data-power-stock-label>Original -- cv</span><span data-power-tuned-label>Remap -- cv</span></small>
             </div>
             <div>
-              <span>Bin&aacute;rio</span>
-              <i data-torque-bar></i>
+              <span>Bin&aacute;rio <strong data-torque-bar-label>+-- Nm</strong></span>
+              <div class="remap-bar-track">
+                <i data-torque-stock-bar></i>
+                <b data-torque-bar></b>
+                <em data-torque-marker></em>
+              </div>
+              <small><span data-torque-stock-label>Original -- Nm</span><span data-torque-tuned-label>Remap -- Nm</span></small>
             </div>
           </div>
         </div>
